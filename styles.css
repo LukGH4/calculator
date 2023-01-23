@@ -1,0 +1,111 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.calc-container {
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    display: flex;
+    height: clamp(250px, 85vh, 650px);
+    width: clamp(200px, 80vw, 600px);
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color:cornflowerblue;
+    border-radius: 5%;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+
+.calc-container .display {
+  display: flex;
+  flex: 1;
+  background-color: aliceblue;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border: 2px solid black;
+  padding-right: 10px;
+  justify-content: stretch;
+  font-size: clamp(25px, 7.5vw, 50px);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-items: center;
+  justify-content:flex-end;
+}
+
+.calc-container .buttons-container {
+    display: flex;
+    flex: 4;
+}
+
+.buttons-container .digit-buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+
+}
+
+.buttons-container .digit-buttons .row {
+    display: flex;
+    flex: 1;
+}
+ 
+.buttons-container .digit-buttons .row button {
+    display: flex;
+    margin: 10px;
+    flex: 1;
+    justify-content: center;
+    font-size: 5vh;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: solid 2px black;
+    border-radius: 10%;
+    background-color:aquamarine;
+    transition: 0.2s;
+}
+
+.buttons-container .digit-buttons .row .clear {
+    flex: 2;
+}
+
+.buttons-container .digit-buttons .row button:hover{
+    background-color:cadetblue;
+}
+
+.buttons-container .func-buttons {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+    flex-direction: column;
+}
+.buttons-container .func-buttons button {
+    margin: 10px;
+    flex: 1;
+    display: flex;
+    font-size: 6vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: solid 2px black;
+    border-radius: 10%;
+    background-color: cyan;
+    transition: 0.2s;
+
+}
+
+.buttons-container .func-buttons button:hover{
+    background-color: lightseagreen;
+}
+
+.buttons-container .func-buttons .func:hover{
+    background-color: lightseagreen;
+}
+
+
