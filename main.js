@@ -7,6 +7,9 @@ function subtraction (numOne, numTwo) {
 }
 
 function division (numOne, numTwo) {
+    if (numTwo == 0) {
+        return 'Hell No';
+    };
     return Math.round((numOne / numTwo) * 10000) / 10000;
 }
 
@@ -57,7 +60,7 @@ function main () {
                 };
             };
 
-            if (equaled) {
+            if (equaled && !numOnePressed) {
                 operation.innerHTML = '';
                 display.innerHTML = digitButtons[i].innerHTML;
                 equaled = false;
@@ -77,6 +80,7 @@ function main () {
     for (let i = 0; i < functionButtons.length; i++){
         functionButtons[i].onclick = () => {
             let numOne = Number(display.innerHTML);
+            let symbol = functionButtons[i].innerHTML;
             operation.innerHTML = `${numOne} ${functionButtons[i].innerHTML}`;
             numOnePressed = true;
             cleared = true;
@@ -92,8 +96,14 @@ function main () {
             equals.onclick = () => {
                 if (numOnePressed) {
                     numTwo = Number(display.innerHTML);
-                    display.innerHTML = operate(functionButtons[i].innerHTML, numOne, numTwo);
                     operation.innerHTML += ` ${numTwo}`;
+                    if (symbol == '÷' && numTwo == 0){
+                        display.innerHTML = 'Hell No';
+                        numOne = 1;
+                        operation.innerHTML = ``;
+                    } else {
+                        display.innerHTML = operate(symbol, numOne, numTwo);
+                    }
                     cleared = true;
                     numOnePressed = false;
                     equaled = true;
