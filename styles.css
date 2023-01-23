@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     background-color: cornflowerblue;
+    padding-bottom: 10vh;
 }
 .calc-container {
     margin-top: 5vh;
